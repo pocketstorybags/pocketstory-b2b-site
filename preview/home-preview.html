@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PocketStory Home Preview</title>
+<style>
+:root{--cream:#f8f3ea;--paper:#fffdf8;--soft:#f0e8db;--green:#123f33;--gold:#b68a3a;--muted:#6a6961;--line:#ded3c2}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:#30332f;font-family:Arial,sans-serif;line-height:1.55}
+.wrap{width:min(1180px,calc(100% - 40px));margin:auto}header{height:82px;display:flex;align-items:center;border-bottom:1px solid #e5dccd;background:#faf6ef}
+header .wrap{display:flex;align-items:center;gap:35px}.logo{width:190px;height:58px;object-fit:contain}nav{margin-left:auto;display:flex;gap:25px;font-size:13px;color:var(--green);font-weight:700}
+.btn{padding:14px 22px;border-radius:8px;background:var(--green);color:#fff;font-weight:700;font-size:13px}.hero{padding:60px 0 40px}
+.hero-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:60px;align-items:center}h1,h2,h3{font-family:Georgia,serif;color:var(--green);font-weight:500}h1{font-size:68px;line-height:1.03;margin:12px 0 20px;letter-spacing:-2px}
+.hero p{font-size:18px;color:var(--muted)}.eyebrow{font-size:11px;letter-spacing:3px;color:var(--gold);font-weight:800}
+.actions{display:flex;gap:14px;margin-top:28px}.outline{background:transparent;color:var(--green);border:1px solid #bbaa8e}
+.heroimg{height:610px;width:100%;object-fit:cover;border-radius:32px;box-shadow:0 18px 48px #193c2d18}
+.trust{display:grid;grid-template-columns:repeat(5,1fr);background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 15px 45px #123f3310}
+.trust div{padding:8px 16px;border-right:1px solid #e7dece}.trust div:last-child{border:0}.trust b{display:block;color:var(--green);font-size:13px}.trust span{font-size:11px;color:var(--muted)}
+section{padding:86px 0}.head{text-align:center;max-width:760px;margin:0 auto 40px}.head h2{font-size:48px;margin:10px 0 10px}.head p{color:var(--muted)}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}.pc{border:1px solid var(--line);border-radius:17px;overflow:hidden;background:var(--paper)}.pc img{width:100%;aspect-ratio:1;object-fit:cover}.pc div{padding:18px}.pc h3{font-size:22px;margin:0 0 10px}.pc span{font-size:12px;color:var(--green);font-weight:bold}
+.soft{background:#fff9}.features{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.fc{border:1px solid var(--line);background:var(--paper);border-radius:18px;padding:28px;min-height:170px}.fc b{color:var(--gold);font-size:12px}.fc h3{font-size:22px;margin:14px 0 8px}.fc p{font-size:13px;color:var(--muted)}
+.buyers{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.buyer{border:1px solid var(--line);background:var(--paper);border-radius:18px;padding:28px}.buyer h3{font-size:23px;margin:10px 0}.buyer p{font-size:13px;color:var(--muted)}
+.factory{display:grid;grid-template-columns:.72fr 1.28fr;gap:38px;align-items:center}.factory h2,.sustain h2,.quote h2{font-size:48px;line-height:1.06;margin:12px 0}.factory p,.sustain p{color:var(--muted)}.factory img{width:100%;height:350px;object-fit:cover;border-radius:22px}
+.process{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:28px}.process div{border:1px solid var(--line);background:var(--paper);border-radius:16px;padding:20px}.process b{color:var(--gold)}.process h3{font-size:18px;margin:10px 0}.process p{font-size:12px;color:var(--muted)}
+.sustain{display:grid;grid-template-columns:.8fr 1.2fr;gap:45px;align-items:center}.sustain img{width:100%;height:320px;object-fit:cover;border-radius:22px}
+.quote{background:var(--green);color:white;padding:65px 0}.quote-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:45px;align-items:center}.quote h2{color:#fff}.quote p{color:#ffffffc4}.form{background:var(--paper);padding:26px;border-radius:18px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.form input,.form select{padding:13px;border:1px solid #d8cebe;border-radius:8px}.form button{grid-column:1/-1;border:0;padding:14px;background:var(--gold);color:#fff;border-radius:8px;font-weight:800}
+footer{background:#0b342b;color:#ffffffc2;padding:45px 0}footer .wrap{display:grid;grid-template-columns:1.6fr repeat(3,1fr);gap:35px}footer img{width:210px;height:75px;object-fit:contain}footer h3{color:#fff;font-family:Arial;font-size:13px;text-transform:uppercase}footer p{font-size:12px}
+</style>
+</head>
+<body>
+<header><div class="wrap"><img class="logo" src="../public/images/pocketstory-logo.png"><nav><span>Home</span><span>Products</span><span>Customization</span><span>Industries</span><span>Factory & Quality</span><span>Contact</span></nav><span class="btn">Get a Quote →</span></div></header>
+<main>
+<div class="hero"><div class="wrap hero-grid"><div><span class="eyebrow">CUSTOM BAGS FOR B2B BUYERS</span><h1>Custom Tote Bags & Drawstring Bags for Brands and Bulk Orders</h1><p>Custom tote bags and drawstring bags with flexible materials, logo printing, embroidery and private label options for brands, wholesalers and promotional buyers.</p><div class="actions"><span class="btn">Get a Custom Quote →</span><span class="btn outline">Explore Products →</span></div></div><img class="heroimg" src="../public/images/canvas-tote.webp"></div></div>
+<div class="wrap trust"><div><b>Flexible MOQ</b><span>Support trial and bulk orders</span></div><div><b>Custom Logo</b><span>Printing & embroidery options</span></div><div><b>OEM & ODM</b><span>Size, material & structure</span></div><div><b>Quality Control</b><span>Inspection before shipment</span></div><div><b>Global Shipping</b><span>Export support for global buyers</span></div></div>
+<section><div class="wrap"><div class="head"><span class="eyebrow">OUR PRODUCTS</span><h2>Custom Bag Solutions for Your Brand</h2><p>Tote bags are our core product line. Drawstring bags extend the range for gifts, accessories and events.</p></div><div class="products">
+    <article class="pc"><img src="../public/images/canvas-tote.webp"><div><h3>Canvas Tote Bag</h3><span>Explore product →</span></div></article>
+    
+    <article class="pc"><img src="../public/images/cotton-tote.webp"><div><h3>Cotton Tote Bag</h3><span>Explore product →</span></div></article>
+    
+    <article class="pc"><img src="../public/images/jute-tote.webp"><div><h3>Jute Tote Bag</h3><span>Explore product →</span></div></article>
+    
+    <article class="pc"><img src="../public/images/non-woven-tote.webp"><div><h3>Non Woven Tote Bag</h3><span>Explore product →</span></div></article>
+    
+    <article class="pc"><img src="../public/images/cotton-drawstring.webp"><div><h3>Cotton Drawstring Bag</h3><span>Explore product →</span></div></article>
+    
+    <article class="pc"><img src="../public/images/satin-drawstring.webp"><div><h3>Satin Drawstring Bag</h3><span>Explore product →</span></div></article>
+    
+    <article class="pc"><img src="../public/images/velvet-drawstring.webp"><div><h3>Velvet Drawstring Bag</h3><span>Explore product →</span></div></article>
+    
+    <article class="pc"><img src="../public/images/drawstring-backpack.webp"><div><h3>Drawstring Backpack Bag</h3><span>Explore product →</span></div></article>
+    </div></div></section>
+<section class="soft"><div class="wrap"><div class="head"><span class="eyebrow">CUSTOMIZATION</span><h2>Tailored to Your Brand</h2></div><div class="features"><div class="fc"><b>01</b><h3>Materials</h3><p>Cotton, canvas, jute, non woven, satin, velvet and polyester.</p></div><div class="fc"><b>02</b><h3>Logo Methods</h3><p>Screen printing, embroidery, heat transfer, DTF and labels.</p></div><div class="fc"><b>03</b><h3>Structure Options</h3><p>Custom size, handles, pockets, zipper, gusset and lining.</p></div><div class="fc"><b>04</b><h3>Packaging Options</h3><p>Paper bands, hang tags, barcode labels and retail-ready packing.</p></div></div></div></section>
+<section><div class="wrap"><div class="head"><span class="eyebrow">B2B SOLUTIONS</span><h2>Bag Solutions for Different Business Buyers</h2></div><div class="buyers"><div class="buyer"><h3>Retail & Fashion Brands</h3><p>Custom tote bags for retail packaging and brand merchandise.</p></div><div class="buyer"><h3>Corporate Gift Companies</h3><p>Promotional bags for employee and client gifting programs.</p></div><div class="buyer"><h3>Wholesalers & Distributors</h3><p>Flexible bulk production and stable repeat-order supply.</p></div><div class="buyer"><h3>Trade Shows & Events</h3><p>Cost-effective custom bags for exhibitions and campaigns.</p></div><div class="buyer"><h3>DTC & E-commerce Brands</h3><p>Private label bags for online brands and customer packaging.</p></div><div class="buyer"><h3>Sustainable Brands</h3><p>Reusable cotton, canvas and jute bag solutions.</p></div></div></div></section>
+<section class="soft"><div class="wrap"><div class="head"><span class="eyebrow">WHY POCKETSTORY</span><h2>Built for B2B Custom Bag Projects</h2></div><div class="features"><div class="fc"><b>01</b><h3>Flexible MOQ</h3><p>Test new designs before scaling larger orders.</p></div><div class="fc"><b>02</b><h3>Full Customization</h3><p>Customize material, size, structure and logo.</p></div><div class="fc"><b>03</b><h3>Stable Bulk Production</h3><p>Reliable production for repeat and volume orders.</p></div><div class="fc"><b>04</b><h3>Fast Sampling</h3><p>Turn your design or reference into a physical sample.</p></div></div></div></section>
+<section><div class="wrap factory"><div><span class="eyebrow">FACTORY & QUALITY</span><h2>Built for Reliable Bulk Production</h2><p>From material sourcing and sample development to printing, sewing, quality inspection and packing, we support custom bag projects from concept to bulk delivery.</p></div><img src="../public/images/factory-production.webp"></div><div class="wrap process"><div><b>01</b><h3>Sample Development</h3><p>Confirm design, size and materials.</p></div><div><b>02</b><h3>Logo Production</h3><p>Printing or embroidery based on artwork.</p></div><div><b>03</b><h3>Sewing</h3><p>Bag construction and skilled assembly.</p></div><div><b>04</b><h3>Quality Check</h3><p>Multi-step inspection before packing.</p></div><div><b>05</b><h3>Packing</h3><p>Export packing prepared for delivery.</p></div></div></section>
+<section class="soft"><div class="wrap sustain"><div><span class="eyebrow">RESPONSIBLE OPTIONS</span><h2>Better Bags for a Better Future</h2><p>Reusable materials and durable designs can support more responsible packaging programs.</p></div><img src="../public/images/sustainability.webp"></div></section>
+<div class="quote"><div class="wrap quote-grid"><div><span class="eyebrow">START YOUR PROJECT</span><h2>Ready to Create Custom Bags for Your Brand?</h2><p>Share your product type and estimated quantity. We will review your project and help match the material, logo method and production solution.</p></div><div class="form"><input placeholder="Full Name"><input placeholder="Business Email"><select><option>Product Type</option></select><select><option>Estimated Quantity</option></select><button>Get My Custom Quote →</button></div></div></div>
+</main>
+<footer><div class="wrap"><div><img src="../public/images/pocketstory-logo.png"><p>Custom tote bags and drawstring bags for brands, wholesalers and promotional buyers.</p></div><div><h3>Products</h3><p>Tote Bags</p><p>Drawstring Bags</p><p>Canvas Tote Bags</p></div><div><h3>Customization</h3><p>Materials</p><p>Logo Methods</p><p>Packaging Options</p></div><div><h3>Company</h3><p>Factory & Quality</p><p>Sustainability</p><p>Request a Quote</p></div></div></footer>
+</body></html>
