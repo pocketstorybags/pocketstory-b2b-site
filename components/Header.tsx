@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { assetUrl } from "@/lib/assets";
+import { whatsappLink } from "@/lib/whatsapp";
 
 const nav = [
   ["Home", "/"],
@@ -23,9 +24,14 @@ export function Header() {
             <Link key={label} href={href}>{label}</Link>
           ))}
         </nav>
-        <Link href="/get-a-quote" className="button button-primary header-cta">
-          Get a Quote <span aria-hidden>→</span>
-        </Link>
+        <a
+          href={whatsappLink("Hello PocketStory, I would like to get a custom bag quote.")}
+          className="button button-primary header-cta"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          WhatsApp Quote <span aria-hidden>→</span>
+        </a>
       </div>
     </header>
   );

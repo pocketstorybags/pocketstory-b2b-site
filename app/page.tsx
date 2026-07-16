@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ProductCard } from "@/components/ProductCard";
 import { QuoteForm } from "@/components/QuoteForm";
+import { whatsappLink } from "@/lib/whatsapp";
 import { products } from "@/data/products";
 import { assetUrl } from "@/lib/assets";
 
@@ -58,7 +59,7 @@ export default function HomePage() {
               embroidery and private label options for brands, wholesalers and promotional buyers.
             </p>
             <div className="button-row">
-              <Link className="button button-primary" href="/get-a-quote">Get a Custom Quote <span>→</span></Link>
+              <a className="button button-primary" href={whatsappLink("Hello PocketStory, I would like to get a custom bag quote.")} target="_blank" rel="noopener noreferrer">Chat on WhatsApp <span>→</span></a>
               <Link className="button button-outline" href="/products">Explore Products <span>→</span></Link>
             </div>
             <div className="hero-proof">
@@ -236,8 +237,8 @@ export default function HomePage() {
               material, logo method and production solution.
             </p>
             <div className="quote-points">
-              <span>✓ Project-based quotation</span>
-              <span>✓ Artwork review</span>
+              <span>✓ WhatsApp quick response</span>
+              <span>✓ Share artwork in chat</span>
               <span>✓ B2B bulk order support</span>
             </div>
           </div>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { assetUrl } from "@/lib/assets";
+import { whatsappLink } from "@/lib/whatsapp";
 
 export function Footer() {
   return (
@@ -10,7 +11,7 @@ export function Footer() {
           <p className="footer-copy">
             Custom tote bags and drawstring bags for brands, wholesalers and promotional buyers.
           </p>
-          <p className="footer-small">Email: sales@pocketstorybags.com</p>
+          <p className="footer-small">WhatsApp: Fast custom quote support</p>
         </div>
         <div>
           <h3>Products</h3>
@@ -30,7 +31,7 @@ export function Footer() {
           <h3>Company</h3>
           <Link href="/#factory">Factory & Quality</Link>
           <Link href="/#sustainability">Sustainability</Link>
-          <Link href="/get-a-quote">Request a Quote</Link>
+          <a href={whatsappLink("Hello PocketStory, I need a custom bag quote.")} target="_blank" rel="noopener noreferrer">WhatsApp Quote</a>
           <Link href="/#quote">Contact</Link>
         </div>
       </div>

@@ -103,3 +103,28 @@ Use the actual records displayed by Vercel for your project rather than copying 
 Several product photos were supplied as reference images and include visible names, sample artwork or third-party style references. Before a public commercial launch, replace any image you do not own or license with your own factory/product photography or approved brand-neutral visuals.
 
 The factory and sustainability visuals in this starter are concept-support images for layout preview. Replace them with real factory, QC, packing and material photography for stronger B2B trust.
+
+
+## WhatsApp Inquiry Setup
+
+This version uses WhatsApp instead of email forms.
+
+Set your WhatsApp number in Vercel:
+
+```bash
+NEXT_PUBLIC_WHATSAPP_NUMBER=8613800000000
+```
+
+Use international format without `+`, spaces or dashes.
+
+Examples:
+
+```text
+China: 8613812345678
+US: 12125551234
+UK: 447911123456
+```
+
+After adding or changing this environment variable in Vercel, redeploy the project.
+
+All main CTA buttons and the quote form now open WhatsApp with a pre-filled B2B inquiry message.

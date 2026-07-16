@@ -1,39 +1,51 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { whatsappLink } from "@/lib/whatsapp";
 
 type Props = {
   compact?: boolean;
   source?: string;
+  defaultProduct?: string;
 };
 
-export function QuoteForm({ compact = false, source = "website" }: Props) {
-  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
-  const [message, setMessage] = useState("");
+export function QuoteForm({ compact = false, source = "website", defaultProduct = "" }: Props) {
+  const [status, setStatus] = useState("");
 
-  async function onSubmit(event: FormEvent<HTMLFormElement>) {
+  function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setStatus("sending");
-    setMessage("");
-
     const form = event.currentTarget;
     const data = new FormData(form);
-    data.set("source", source);
 
-    try {
-      const response = await fetch("/api/inquiry", {
-        method: "POST",
-        body: data
-      });
-      const payload = await response.json();
-      if (!response.ok) throw new Error(payload.error || "Unable to send inquiry.");
-      form.reset();
-      setStatus("success");
-      setMessage("Thank you. Your project details have been received.");
-    } catch (error) {
-      setStatus("error");
-      setMessage(error instanceof Error ? error.message : "Unable to send inquiry.");
+    const name = String(data.get("name") || "").trim();
+    const company = String(data.get("company") || "").trim();
+    const country = String(data.get("country") || "").trim();
+    const productType = String(data.get("productType") || "").trim();
+    const quantity = String(data.get("quantity") || "").trim();
+    const customLogo = String(data.get("customLogo") || "").trim();
+    const message = String(data.get("message") || "").trim();
+
+    if (!name || !productType || !quantity) {
+      setStatus("Please complete your name, product type and quantity before opening WhatsApp.");
+      return;
     }
+
+    const whatsappMessage = [
+      "Hello PocketStory, I would like to request a custom bag quote.",
+      "",
+      `Name: ${name}`,
+      company ? `Company: ${company}` : "",
+      country ? `Country: ${country}` : "",
+      `Product Type: ${productType}`,
+      `Estimated Quantity: ${quantity}`,
+      customLogo ? `Custom Logo: ${customLogo}` : "",
+      message ? `Project Details: ${message}` : "",
+      "",
+      `Source: ${source}`
+    ].filter(Boolean).join("\n");
+
+    window.open(whatsappLink(whatsappMessage), "_blank", "noopener,noreferrer");
+    setStatus("WhatsApp has opened. Please send the pre-filled message to start your quote request.");
   }
 
   return (
@@ -43,10 +55,6 @@ export function QuoteForm({ compact = false, source = "website" }: Props) {
           Full Name *
           <input name="name" required placeholder="Your name" autoComplete="name" />
         </label>
-        <label>
-          Business Email *
-          <input name="email" type="email" required placeholder="you@company.com" autoComplete="email" />
-        </label>
         {!compact && (
           <>
             <label>
@@ -54,14 +62,14 @@ export function QuoteForm({ compact = false, source = "website" }: Props) {
               <input name="company" placeholder="Company name" autoComplete="organization" />
             </label>
             <label>
-              Country *
-              <input name="country" required placeholder="Country" autoComplete="country-name" />
+              Country
+              <input name="country" placeholder="Country" autoComplete="country-name" />
             </label>
           </>
         )}
         <label>
           Product Type *
-          <select name="productType" required defaultValue="">
+          <select name="productType" required defaultValue={defaultProduct}>
             <option value="" disabled>Select product type</option>
             <option>Canvas Tote Bag</option>
             <option>Cotton Tote Bag</option>
@@ -95,11 +103,6 @@ export function QuoteForm({ compact = false, source = "website" }: Props) {
                 <option>Not Sure</option>
               </select>
             </label>
-            <label>
-              Upload Artwork
-              <input name="artwork" type="file" accept=".ai,.pdf,.png,.jpg,.jpeg" />
-              <span className="field-note">AI, PDF, PNG or JPG. Max 4 MB.</span>
-            </label>
             <label className="form-full">
               Project Details
               <textarea
@@ -111,10 +114,11 @@ export function QuoteForm({ compact = false, source = "website" }: Props) {
           </>
         )}
       </div>
-      <button className="button button-gold form-button" type="submit" disabled={status === "sending"}>
-        {status === "sending" ? "Sending..." : compact ? "Request Quote →" : "Get My Custom Quote →"}
+      <button className="button button-gold form-button" type="submit">
+        {compact ? "Chat on WhatsApp →" : "Send WhatsApp Inquiry →"}
       </button>
-      {message && <p className={`form-status ${status}`}>{message}</p>}
+      {status && <p className="form-status success">{status}</p>}
+      <p className="whatsapp-note">No email form required. Your inquiry opens directly in WhatsApp with project details.</p>
     </form>
   );
 }

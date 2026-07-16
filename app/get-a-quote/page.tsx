@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { QuoteForm } from "@/components/QuoteForm";
 
 export const metadata: Metadata = {
-  title: "Request a Custom Bag Quote",
-  description: "Send PocketStory your bag type, quantity, logo and artwork requirements for a project-based B2B quotation."
+  title: "WhatsApp Custom Bag Quote",
+  description: "Start a WhatsApp inquiry with PocketStory for custom tote bags and drawstring bags."
 };
 
 export default function QuotePage() {
@@ -12,14 +12,14 @@ export default function QuotePage() {
       <section className="page-hero">
         <div className="container narrow">
           <span className="eyebrow">GET A QUOTE</span>
-          <h1>Tell Us About Your Custom Bag Project</h1>
-          <p>Share your product type, estimated quantity and artwork. We will review the project requirements before quoting.</p>
+          <h1>Start Your WhatsApp Quote Request</h1>
+          <p>Fill in the key project details and open WhatsApp with a ready-to-send quotation message.</p>
         </div>
       </section>
       <section className="section">
         <div className="container quote-page-grid">
           <div className="quote-side">
-            <h2>What helps us quote accurately</h2>
+            <h2>What to share on WhatsApp</h2>
             <ul className="check-list">
               <li>Bag type or reference image</li>
               <li>Estimated order quantity</li>
@@ -28,8 +28,8 @@ export default function QuotePage() {
               <li>Packaging and delivery target</li>
             </ul>
             <div className="contact-box">
-              <strong>Business inquiry email</strong>
-              <span>sales@pocketstorybags.com</span>
+              <strong>WhatsApp inquiry support</strong>
+              <span>Click the form button to open WhatsApp</span>
             </div>
           </div>
           <QuoteForm source="quote-page" />

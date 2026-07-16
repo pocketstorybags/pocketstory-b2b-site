@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { products, getProduct } from "@/data/products";
 import { assetUrl } from "@/lib/assets";
+import { whatsappLink } from "@/lib/whatsapp";
 
 export function generateStaticParams() {
   return products.map((product) => ({ slug: product.slug }));
@@ -38,7 +39,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
               <div><span>Applications</span><strong>{product.applications}</strong></div>
             </div>
             <div className="button-row">
-              <Link className="button button-primary" href={`/get-a-quote?product=${encodeURIComponent(product.shortName)}`}>Request Bulk Pricing →</Link>
+              <a className="button button-primary" href={whatsappLink(`Hello PocketStory, I need a quote for ${product.shortName}.`)} target="_blank" rel="noopener noreferrer">WhatsApp Quote →</a>
               <Link className="button button-outline" href="/products">Back to Products</Link>
             </div>
           </div>
@@ -60,7 +61,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
           <span className="eyebrow">CUSTOMIZATION</span>
           <h2>Share Your Design, Size and Quantity</h2>
           <p>We will review the project requirements and recommend a suitable material, logo process and packaging approach.</p>
-          <Link href={`/get-a-quote?product=${encodeURIComponent(product.shortName)}`} className="button button-primary">Get a Custom Quote →</Link>
+          <a href={whatsappLink(`Hello PocketStory, I need a quote for ${product.shortName}.`)} className="button button-primary" target="_blank" rel="noopener noreferrer">Chat on WhatsApp →</a>
         </div>
       </section>
     </main>
